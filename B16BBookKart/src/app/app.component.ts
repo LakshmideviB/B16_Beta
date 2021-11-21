@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  title = 'B16BBookKart';
+export class AppComponent implements OnInit {
+  
+  items: any;
+  ngOnInit() {
+    this.items = [
+      { name: 'My Orders', url: '' },
+      { name: 'Logout', url: '' },
+    ];
+  }
 }
