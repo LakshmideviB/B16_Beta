@@ -12,11 +12,17 @@
 
         <div>
             <button mat-icon-button [routerLinkActive]="['link-active']" routerLink="wishlist">
-                <mat-icon matBadge="0" matBadgeColor="warn">favorite</mat-icon>
+                <mat-icon class="icon">favorite</mat-icon>
+                <span class="badge" matBadgeColor="warn" *ngIf="badgeeCount > 0">{{
+                    badgeeCount
+                    }}</span>
             </button>
 
             <button mat-icon-button [routerLinkActive]="['link-active']" routerLink="shopping-cart">
-                <mat-icon matBadge="0" matBadgeColor="warn">shopping_cart</mat-icon>
+                <mat-icon class="icon">shopping_cart</mat-icon>
+                <span class="badge" matBadgeColor="warn" *ngIf="badgeCount > 0">{{
+                    badgeCount
+                    }}</span>
             </button>
 
             <ng-container>
@@ -36,3 +42,20 @@
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
+<br />
+<div>
+    <button mat-raised-button (click)="incrementCount()">
+        Add Items to Cart
+    </button>
+    <button mat-raised-button (click)="decrementCount()">
+        Remove Items from Cart
+    </button>
+</div>
+
+<br />
+<button mat-raised-button (click)="incrementtCount()">
+    Add Items to favorites
+</button>
+<button mat-raised-button (click)="decrementtCount()">
+    Remove Itemss from favorites
+</button>
